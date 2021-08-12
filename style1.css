@@ -1,0 +1,417 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: inter;
+    src: url(Inter-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: lexenddeca;
+    src: url(LexendDeca-Regular.ttf) format('truetype');
+}
+
+
+body {
+    background-color:hsl(233, 47%, 7%);
+}
+
+.container {
+    max-width: 1200px;
+    max-height: 450px;
+    margin: 30px auto;
+    background-color: hsl(244, 38%, 16%);
+    display: grid;
+    border-radius: 10px;
+    grid-template-areas: "blank1 header header header blank2 pic"
+    "blank1 text text text blank2 pic"
+    "blank1 c1 c2 c3 blank2 pic"
+    "blank1 d1 d2 d3 blank2 pic";
+    grid-template-columns: 60px 1fr 1fr 1fr 60px 50%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    padding: 60px 0px 0px 0px;
+    font-size: 40px;
+    font-family: "lexenddeca";
+    color: white;
+    display: inline-block;
+}
+
+.text {
+    grid-area: text;
+    display: grid;
+    padding: 30px 75px 0px 0px;
+    font-family: "inter";
+    color: hsla(0, 0%, 100%, 0.6);
+    line-height: 25px;
+}
+
+.pic {
+    grid-area: pic;
+    display: grid;
+    background-image: url(image-header-desktop.jpg);
+    background-color: teal;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 10px 10px 0;
+    box-sizing: border-box;
+    /* filter: sepia(100%) hue-rotate(251deg);
+    -webkit-filter: sepia(100%) hue-rotate(251deg);
+    -moz-filter: sepia(100%) hue-rotate(251deg); */
+}
+
+.pic img {
+    opacity: 0.60;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+.c1 {
+    grid-area: c1;
+    display: grid;
+    padding: 25px 0 0px 0px;
+    font-size: 28px;
+    font-family: "lexenddeca";
+    color: white;
+    align-content:flex-end
+}
+
+.c2 {
+    grid-area: c2;
+    display: grid;
+    padding: 25px 0 0px 0;
+    font-size: 28px;
+    font-family: "lexenddeca";
+    color: white;
+    box-sizing: border-box;
+    align-content:flex-end;
+}
+
+.c3 {
+    grid-area: c3;
+    display: grid;
+    padding: 25px 0px 0px 0;
+    font-size: 28px;
+    font-family: "lexenddeca";
+    color: white;
+    box-sizing: border-box;
+    align-content:flex-end;
+}
+
+.d1 {
+    grid-area: d1;
+    display: grid;
+    font-family: "inter";
+    color: hsla(0, 0%, 100%, 0.6);
+    align-content:flex-start;
+
+}
+
+.d2 {
+    grid-area: d2;
+    display: grid;
+    font-family: "inter";
+    color: hsla(0, 0%, 100%, 0.6);
+    align-content:flex-start;
+}
+
+.d3 {
+    grid-area: d3;
+    display: grid;
+    font-family: "inter";
+    color: hsla(0, 0%, 100%, 0.6);
+    align-content:flex-start;
+}
+
+.copyright {
+    width: 15rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px auto 20px;
+    color: white;
+    line-height: 15px;
+    font-family: "lexenddeca";
+    font-size: 10px;
+}
+
+.cr a {
+    text-decoration: none;
+}
+
+.cr a:hover {
+    color: hsl(277, 64%, 61%);
+    text-decoration: none;
+}
+
+
+/* Responsive Breakpoint 1 */
+
+@media screen and (max-width: 375px) {
+    .container {
+        grid-template-areas: 
+        "pic"
+        "header"
+        "text"
+        "c1"
+        "d1"
+        "c2"
+        "d2"
+        "c3"
+        "d3";
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 3fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        max-height: 1000px;
+        border-radius: 10px;
+        ;
+    }
+
+    .pic {
+        border-radius: 10px 10px 0 0;
+        max-height: 100%;
+    }
+
+    .pic img {
+        border-radius: 10px 10px 0 0;
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .header {
+        grid-area: header;
+        display: grid;
+        padding: 30px 20px 0px;
+        /* font-size: 20px; */
+        font-family: "lexenddeca";
+        color: white;
+        display: inline-block;
+        text-align: center;
+        line-height: 26px;
+        font-size: 28px;
+    }
+
+    .text {
+        padding: 0%;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        font-size: 13px;
+        align-content: flex-end;
+    }
+
+    .c1 {
+        padding: 0%;
+        justify-content: center;
+        align-content: flex-end;
+        font-size: 24px;
+    }
+
+    .d1 {
+        padding: 0%;
+        justify-content: center;
+        align-content: flex-start;
+        font-size: 11px;
+        padding-top: 5px;
+    }
+
+    .c2 {
+        padding: 0%;
+        justify-content: center;
+        align-content: flex-end;
+        font-size: 24px;
+    }
+
+    .d2 {
+        padding: 0%;
+        justify-content: center;
+        align-content: flex-start;
+        font-size: 11px;
+        padding-top: 5px;
+    }
+
+    .c3 {
+        padding: 0%;
+        justify-content: center;
+        align-content: flex-end;
+        font-size: 24px;
+    }
+
+    .d3 {
+        padding: 0%;
+        justify-content: center;
+        align-content: flex-start;
+        font-size: 11px;
+        padding-top: 5px;
+    }
+
+
+    /* "blank1 pic pic pic blank2"
+    "blank1 header header header blank2"
+    "blank1 text text text blank2"
+    "blank1 c1 c2 c3 blank2"
+    "blank1 d1 d2 d3 blank2";*/
+}
+
+
+/* Responsive Breakpoint 2 (840px) */
+
+@media screen and (max-width: 840px) {
+    .header {
+        font-size: 2em;
+    }
+
+    .text {
+        font-size: 1em;
+        padding: 20px 0%;
+    }
+
+    .c1 {
+        font-size: 1.5em;
+    }
+
+    .c2 {
+        font-size: 1.5em;
+    }
+
+    .c3 {
+        font-size: 1.5em;
+    }
+
+    .d1 {
+        font-size: 0.75em;
+    }
+
+    .d2 {
+        font-size: 0.75em;
+    }
+
+    .d3 {
+        font-size: 0.75em;
+    }
+}
+
+/* Responsive Breakpoint 3 (700px) */
+
+@media screen and (max-width: 700px) {
+    .header {
+        font-size: 1.5em;
+    }
+
+    .text {
+        font-size: 1em;
+    }
+
+    .c1 {
+        font-size: 1.25em;
+    }
+
+    .c2 {
+        font-size: 1.25em;
+    }
+
+    .c3 {
+        font-size: 1.25em;
+    }
+
+    .d1 {
+        font-size: 0.65em;
+    }
+
+    .d2 {
+        font-size: 0.65em;
+    }
+
+    .d3 {
+        font-size: 0.65em;
+    }
+}
+
+/* Responsive Breakpoint 4 (600px) */
+
+@media screen and (max-width: 600px) {
+    .header {
+        font-size: 1.5em;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+
+    .c1 {
+        font-size: 1.25em;
+    }
+
+    .c2 {
+        font-size: 1.25em;
+    }
+
+    .c3 {
+        font-size: 1.25em;
+    }
+
+    .d1 {
+        font-size: 0.65em;
+    }
+
+    .d2 {
+        font-size: 0.65em;
+    }
+
+    .d3 {
+        font-size: 0.65em;
+    }
+}
