@@ -1,3 +1,7 @@
+*CHECKOUT MY DESIGN RESULT (LIVESITE) FROM THIS CHALLENGE:*
+
+https://stats-preview-card-azmi.netlify.app/
+
 # Frontend Mentor - Stats preview card component
 
 ![Design preview for the Stats preview card component coding challenge](./design/desktop-preview.jpg)
