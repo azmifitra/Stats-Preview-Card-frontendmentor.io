@@ -199,7 +199,7 @@ body {
 
 /* Responsive Breakpoint 1 */
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
     .container {
         grid-template-areas: 
         "pic"
